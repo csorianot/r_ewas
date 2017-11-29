@@ -1,5 +1,5 @@
 FROM r-base
-RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-dev libmariadb-client-lgpl-dev libcairo2-dev ghostscript && apt-get clean
+RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-dev libmariadb-client-lgpl-dev ibglib2.0-dev libcairo2-dev ghostscript && apt-get clean
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("sva")'
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("minfi")'
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("RnBeads")'
