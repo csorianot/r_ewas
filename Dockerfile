@@ -18,3 +18,4 @@ RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); \
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); \
     biocLite(pkgs=c("Biobase","IRanges","AnnotationDbi","MASS","IlluminaHumanMethylation450k.db","IlluminaHumanMethylation450kmanifest","CopyNumber450kData","DNAcopy"))'
 RUN Rscript -e 'install.packages(c("Hmisc","devtools","MASS","lmtest","gplots","markdown","Cairo","knitr","doParallel","compareGroups","MatrixEQTL","plyr","dplyr","matrixStats","sandwich","ggplot2","glmnet","VennDiagram","parallel"))'
+
