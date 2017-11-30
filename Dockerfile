@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install libxt-dev && \
      rm -rf /var/lib/apt/lists/*
-   
+RUN Rscript -e 'install.packages("devtools", dependencies = TRUE)'
+RUN Rscript -e 'library(devtools); install_github("brentp/celltypes450")'   
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("sva")'
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("minfi")'
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("RnBeads")'
