@@ -1,5 +1,5 @@
 FROM r-base:3.4.0
-RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-dev RapidXML libxls libmariadb-dev libcurl4-openssl-dev\
+RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-dev libxls libmariadb-dev libcurl4-openssl-dev\
     ibglib2.0-dev libcairo2-dev ghostscript && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install libxt-dev && \
