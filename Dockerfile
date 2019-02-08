@@ -4,8 +4,6 @@ RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install libxt-dev && \
      rm -rf /var/lib/apt/lists/*
-RUN curl 'http://downloads.sourceforge.net/libxls/libxls-0.2.0.tar.gz'> libxls-0.2.0.tar.gz && \ 
- tar zxvf libxls-0.2.0.tar.gz && rm libxls-0.2.0.tar.gz && apt-get update && apt-get install -y libxls rm -rf /var/lib/apt/lists/*
 RUN Rscript -e 'install.packages("devtools", dependencies = TRUE)'
 RUN Rscript -e 'library(devtools); install_github("brentp/celltypes450")'  
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite("sva")'
