@@ -1,5 +1,5 @@
 FROM r-base:3.4.0
-RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-dev libmariadb-client-lgpl-dev \
+RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-dev libmariadb-client-lgpl-dev libcurl4-openssl-dev\
     ibglib2.0-dev libcairo2-dev ghostscript && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install libxt-dev && \
@@ -18,5 +18,4 @@ RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); \
     biocLite(pkgs=c("DEXSeq","lumi","RnBeads.hg19","RnBeads","impute","illuminaio","wateRmelon","limma","methylumi"))'
 RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); \
     biocLite(pkgs=c("Biobase","IRanges","AnnotationDbi","MASS","IlluminaHumanMethylation450k.db","IlluminaHumanMethylation450kmanifest","CopyNumber450kData","DNAcopy"))'
-RUN Rscript -e 'install.packages(c("Hmisc","devtools","MASS","lmtest","gplots","markdown","Cairo","knitr","doParallel","compareGroups","MatrixEQTL","plyr","dplyr","matrixStats","sandwich","ggplot2","glmnet","VennDiagram","parallel"))'
-
+RUN Rscript -e 'install.packages(c("Hmisc","devtools","tidyverse","readxl","readr","ggpubr","MASS","lmtest","gplots","markdown","Cairo","knitr","doParallel","compareGroups","MatrixEQTL","plyr","dplyr","matrixStats","sandwich","ggplot2","glmnet","VennDiagram","parallel"))'
