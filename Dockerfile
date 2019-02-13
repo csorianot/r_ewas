@@ -1,4 +1,4 @@
-FROM r-base:3.5.2
+FROM r-base:3.5.0
 RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-dev libmariadb-dev \
     libglib2.0-dev libcairo2-dev ghostscript && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
