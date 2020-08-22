@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y libcurl4-gnutls-dev libxml2-dev libssl-
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install libxt-dev && \
      rm -rf /var/lib/apt/lists/*
-RUN R -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")'
+RUN R -e 'install.packages("BiocManager")'
 RUN R -e 'BiocManager::install(pkgs=c("wateRmelon","DESeq2","snpStats","org.Hs.eg.db","ReactomePA","bigmelon","Biostrings","MEAL","IlluminaHumanMethylationEPICanno.ilm10b4.hg19","IlluminaHumanMethylationEPICanno.ilm10b2.hg19","MethylAid","sva","minfi","RnBeads","RnBeads.hg19","FDb.InfiniumMethylation.hg19","ChAMP","sandwich","lmtest","gap","ggplot2","gdata","snpStats","GenomicRanges","DEXSeq","lumi","impute","illuminaio","limma","methylumi"))'
 RUN R -e 'install.packages("devtools", dependencies = TRUE)'
 RUN R -e 'library(devtools); install_github("perishky/meffil")'
